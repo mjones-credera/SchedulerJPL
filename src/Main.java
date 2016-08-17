@@ -1,4 +1,5 @@
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.jpl7.Atom;
@@ -33,6 +34,7 @@ public class Main {
 
         for (int i = 0; (i < NUM_SOLUTIONS && q1.hasMoreSolutions()); i++) {
             System.out.println("Solution #" + (i+1) + ":");
+            List<ScheduleEntry> entries = new ArrayList<ScheduleEntry>();
             Map<String,Term> resultMap = q1.nextSolution();
             Term[] results = resultMap.get("Schedule").toTermArray();
             for (Term term : results) {
@@ -44,7 +46,11 @@ public class Main {
                 String shiftDay = termArgs[1].args()[1].args()[0].toString();
                 String shiftPeriod = termArgs[1].args()[1].args()[1].toString();
 
-                System.out.println("Name: " + employee + ", Task: " + taskName + ", Day: " + shiftDay + ", Shift: " + shiftPeriod);
+                entries.add(new ScheduleEntry(employee, taskName, shiftDay, shiftPeriod));
+            }
+            // Output results
+            for (ScheduleEntry entry : entries) {
+                System.out.println(entry.toString());
             }
             System.out.println();
         }
