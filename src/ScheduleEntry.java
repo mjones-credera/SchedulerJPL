@@ -33,6 +33,6 @@ public class ScheduleEntry {
         return "Name: " + employee + ", " +
                "Task: " + taskName + ", " +
                "Day: " + shiftDay + ", " +
-               "Shift: " + shiftPeriod + ", ";
+               "Shift: " + shiftPeriod;
     }
 }
