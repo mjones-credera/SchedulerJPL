@@ -16,7 +16,7 @@ public class Main {
     public static final int NUM_SOLUTIONS = 1;
 
     public static void main(String[] args) {
-        setupRules();
+        setupFacts();
 
         // Load the Prolog file
         new Query(
@@ -56,49 +56,49 @@ public class Main {
         }
     }
 
-    public static void setupRules() {
+    public static void setupFacts() {
         new Employee("micah", 10, new String[] { "programming", "writing", "speaking", "nunchucks" },
                 new Shift[] {new Shift("friday",1), new Shift("friday",2),
                              new Shift("saturday",1), new Shift("saturday",2)},
                 new Task[] {new Task("web_design", new Shift("monday",1)),
                             new Task("web_design", new Shift("tuesday",1)),
-                            new Task("web_design", new Shift("tuesday",2))}).assertRules();
+                            new Task("web_design", new Shift("tuesday",2))}).assertFacts();
         new Employee("jonathan", 12, new String[] { "programming", "babysitting", "writing" },
                 new Shift[] {},
-                new Task[] {new Task("web_design", new Shift("monday",2))}).assertRules();
+                new Task[] {new Task("web_design", new Shift("monday",2))}).assertFacts();
         new Employee("blake", 10, new String[] { "programming", "speaking" },
                 new Shift[] {},
                 new Task[] {new Task("server_programming", new Shift("monday",1)),
-                            new Task("server_programming", new Shift("monday",2))}).assertRules();
+                            new Task("server_programming", new Shift("monday",2))}).assertFacts();
 
-        new TaskSkills("documentation", new String[] {"programming","writing"}).assertRule();
-        new TaskSkills("web_design", new String[] {"programming"}).assertRule();
-        new TaskSkills("server_programming", new String[] {"programming"}).assertRule();
-        new TaskSkills("presentation", new String[] {"speaking"}).assertRule();
+        new TaskSkills("documentation", new String[] {"programming","writing"}).assertFact();
+        new TaskSkills("web_design", new String[] {"programming"}).assertFact();
+        new TaskSkills("server_programming", new String[] {"programming"}).assertFact();
+        new TaskSkills("presentation", new String[] {"speaking"}).assertFact();
 
-        new Task("documentation", new Shift("saturday",1)).assertRule();
-        new Task("documentation", new Shift("monday",2)).assertRule();
-        new Task("web_design", new Shift("monday",1)).assertRule();
-        new Task("web_design", new Shift("monday",2)).assertRule();
-        new Task("web_design", new Shift("tuesday",1)).assertRule();
-        new Task("web_design", new Shift("tuesday",2)).assertRule();
-        new Task("web_design", new Shift("wednesday",1)).assertRule();
-        new Task("web_design", new Shift("wednesday",2)).assertRule();
-        new Task("web_design", new Shift("thursday",1)).assertRule();
-        new Task("web_design", new Shift("thursday",2)).assertRule();
-        new Task("web_design", new Shift("saturday",1)).assertRule();
-        new Task("web_design", new Shift("saturday",2)).assertRule();
-        new Task("server_programming", new Shift("monday",1)).assertRule();
-        new Task("server_programming", new Shift("monday",2)).assertRule();
-        new Task("server_programming", new Shift("tuesday",1)).assertRule();
-        new Task("server_programming", new Shift("tuesday",2)).assertRule();
-        new Task("server_programming", new Shift("wednesday",1)).assertRule();
-        new Task("server_programming", new Shift("wednesday",2)).assertRule();
-        new Task("server_programming", new Shift("thursday",1)).assertRule();
-        new Task("server_programming", new Shift("thursday",2)).assertRule();
-        new Task("server_programming", new Shift("friday",1)).assertRule();
-        new Task("server_programming", new Shift("friday",2)).assertRule();
-        new Task("presentation", new Shift("friday",1)).assertRule();
+        new Task("documentation", new Shift("saturday",1)).assertFact();
+        new Task("documentation", new Shift("monday",2)).assertFact();
+        new Task("web_design", new Shift("monday",1)).assertFact();
+        new Task("web_design", new Shift("monday",2)).assertFact();
+        new Task("web_design", new Shift("tuesday",1)).assertFact();
+        new Task("web_design", new Shift("tuesday",2)).assertFact();
+        new Task("web_design", new Shift("wednesday",1)).assertFact();
+        new Task("web_design", new Shift("wednesday",2)).assertFact();
+        new Task("web_design", new Shift("thursday",1)).assertFact();
+        new Task("web_design", new Shift("thursday",2)).assertFact();
+        new Task("web_design", new Shift("saturday",1)).assertFact();
+        new Task("web_design", new Shift("saturday",2)).assertFact();
+        new Task("server_programming", new Shift("monday",1)).assertFact();
+        new Task("server_programming", new Shift("monday",2)).assertFact();
+        new Task("server_programming", new Shift("tuesday",1)).assertFact();
+        new Task("server_programming", new Shift("tuesday",2)).assertFact();
+        new Task("server_programming", new Shift("wednesday",1)).assertFact();
+        new Task("server_programming", new Shift("wednesday",2)).assertFact();
+        new Task("server_programming", new Shift("thursday",1)).assertFact();
+        new Task("server_programming", new Shift("thursday",2)).assertFact();
+        new Task("server_programming", new Shift("friday",1)).assertFact();
+        new Task("server_programming", new Shift("friday",2)).assertFact();
+        new Task("presentation", new Shift("friday",1)).assertFact();
     }
 
 }

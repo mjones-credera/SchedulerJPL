@@ -3,7 +3,7 @@ package rules;
 import org.jpl7.*;
 import org.jpl7.Integer;
 
-// Generates assertions for employee, employee_max_shifts, employee_skill, employee_unavailable, and employee_assigned rules
+// Generates assertions for employee, employee_max_shifts, employee_skill, employee_unavailable, and employee_assigned facts
 public class Employee {
     private String name;
     private int maxShifts;
@@ -39,7 +39,7 @@ public class Employee {
         return assignedTasks;
     }
 
-    public void assertRules() {
+    public void assertFacts() {
         // employee
         new Query(
                 "assert",

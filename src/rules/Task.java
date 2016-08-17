@@ -24,7 +24,7 @@ public class Task {
         return new Compound("task", new Term[] {new Atom(taskName), shift.getCompound()});
     }
 
-    public void assertRule() {
+    public void assertFact() {
         new Query("assert", new Term[] {getCompound()}).hasSolution();
     }
 }

@@ -20,7 +20,7 @@ public class TaskSkills {
         return skills;
     }
 
-    public void assertRule() {
+    public void assertFact() {
         new Query("assert", new Term[] {new Compound("task_skills",
                 new Term[] {new Atom(taskName), org.jpl7.Util.stringArrayToList(skills)})}).hasSolution();
     }
